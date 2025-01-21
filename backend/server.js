@@ -1,3 +1,6 @@
 const express = require("express");
 const app = express();
-app.listen(5000, console.log("Server started on port 5000"));
+app.get("/", (req, res) => {
+  res.send("API is Running");
+});
+app.listen(5000, console.log("Server started on port 5000")); //app will start on this server having 5000 port number
