@@ -1,6 +1,8 @@
+// After installing .env i.e npm i dotenv
 const express = require("express");
 const app = express();
-
+const dotenv = require("dotenv");
+dotenv.config();
 // only passing the Chats details using Id in url
 const chats = [
   {
@@ -125,6 +127,17 @@ app.get("/api/chats/:id", (req, res) => {
   res.send(singleChat); //for JSON Dummy data
 });
 
-app.listen(5000, console.log("Server started on port 5000")); //app will start on this server having 5000 port number
+//we use .env for not public port njumber like 5000
+const PORT = process.env.PORT || 5000;
+
+//app will start on this server having 5000 port number
+app.listen(5000, console.log("Server started on port 5000"));
 
 module.exports = { chats };
+
+// npm i(to create Package JSON file)
+// then ("start": "nodemon backend/server.js") in scripts file
+// go to JSON file and on start make sure to write nodemon package and
+// go to terminal then type(npm install nodemon)
+// then
+// npm start
