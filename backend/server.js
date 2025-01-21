@@ -141,3 +141,5 @@ module.exports = { chats };
 // go to terminal then type(npm install nodemon)
 // then
 // npm start
+
+// you can check on PostMan using Getrequest after typing url (http://localhost:5000/api/chat)
